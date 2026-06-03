@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashlightRoom - GPU光线追踪渲染器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+            font-family: Arial, sans-serif;
+        }
+        
+        #canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            pointer-events: none;
+            z-index: 100;
+        }
+        
+        #controls {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            pointer-events: none;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <div id="info">
+        <div>FPS: <span id="fps">0</span></div>
+        <div>位置: <span id="position">0, 0, 0</span></div>
+    </div>
+    <div id="controls">
+        <div><strong>控制说明：</strong></div>
+        <div>W/A/S/D - 前后左右移动（投影到水平面）</div>
+        <div>空格 - 跳跃</div>
+        <div>1/2/3/4 - 切换到房顶视角</div>
+        <div>5 - 切换回主视角</div>
+        <div>主视角：鼠标控制视角</div>
+        <div>房顶视角：I/K/J/L 控制相机方向，W/A/S/D 控制主角移动</div>
+    </div>
+    
+    <script src="utils.js"></script>
+    <script src="input.js"></script>
+    <script src="camera.js"></script>
+    <script src="scene.js"></script>
+    <script src="shader.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
